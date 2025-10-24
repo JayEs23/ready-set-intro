@@ -41,6 +41,11 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
           dark: "hsl(var(--accent-dark))",
+          light: "hsl(var(--accent-light))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -54,9 +59,11 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-hero': 'var(--gradient-hero)',
       },
       boxShadow: {
         'glow': 'var(--shadow-glow)',
+        'card': 'var(--shadow-card)',
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
