@@ -3,63 +3,71 @@ import { ArrowRight, Shield, Zap, Globe } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-primary">
-      {/* Geometric accent shapes */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-accent opacity-20 transform rotate-12 translate-x-1/3" style={{ clipPath: 'polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%)' }} />
-      <div className="absolute bottom-20 left-0 w-72 h-72 bg-accent-dark opacity-15 transform -rotate-12 -translate-x-1/4" style={{ clipPath: 'polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%)' }} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Animated gradient mesh background */}
+      <div className="absolute inset-0 bg-gradient-mesh" />
       
-      {/* Circuit board pattern overlay */}
-      <div className="absolute inset-0 opacity-5" style={{ 
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v6h6V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
+      {/* Floating orbs */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-glow-pulse" />
+      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1s' }} />
+      
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-20" style={{ 
+        backgroundImage: `linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)`,
+        backgroundSize: '50px 50px'
       }} />
 
       <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Logo placeholder */}
-          <div className="inline-flex items-center gap-2 mb-8 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-            <Shield className="w-5 h-5 text-accent" />
-            <span className="text-primary-foreground font-semibold tracking-wide">REGENCE AI</span>
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          {/* Logo badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/50 backdrop-blur-md rounded-full border border-border shadow-subtle animate-scale-in">
+            <Shield className="w-4 h-4 text-primary" />
+            <span className="text-foreground font-semibold text-sm tracking-wider">REGENCE AI</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in">
-            A Sovereign AI Solutions for{" "}
-            <span className="text-accent">African Enterprises</span>
+          {/* Main heading */}
+          <h1 className="text-6xl md:text-8xl font-bold text-foreground leading-[1.1] animate-fade-in">
+            Sovereign AI
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-primary">Infrastructure</span>
+            <br />
+            for Africa
           </h1>
 
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Regulatory-Grade, In-Country Retrieval-Augmented Generation (RAG) for African Enterprises and Government
+          {/* Subheading */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up">
+            Regulatory-grade, in-country Retrieval-Augmented Generation (RAG) platform delivering secure, auditable AI solutions for enterprises and government.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="bg-accent hover:bg-accent-dark text-accent-foreground font-semibold px-8 py-6 text-lg shadow-glow group">
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <Button size="lg" variant="accent" className="px-8 h-12 text-base group">
               Get Started
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm">
+            <Button size="lg" variant="outline" className="px-8 h-12 text-base">
               Schedule Demo
             </Button>
           </div>
 
-          {/* Key features badges */}
-          <div className="flex flex-wrap justify-center gap-6 text-primary-foreground/80">
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">Data Sovereignty</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">Low Latency</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Globe className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">Compliance Ready</span>
-            </div>
+          {/* Feature badges */}
+          <div className="flex flex-wrap justify-center gap-4 pt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            {[
+              { icon: Shield, text: "Data Sovereignty" },
+              { icon: Zap, text: "Sub-100ms Latency" },
+              { icon: Globe, text: "Full Compliance" }
+            ].map((feature, i) => (
+              <div key={i} className="flex items-center gap-2 px-4 py-2 bg-secondary/30 backdrop-blur-sm rounded-lg border border-border">
+                <feature.icon className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-foreground">{feature.text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />
     </section>
   );
 };

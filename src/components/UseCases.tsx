@@ -50,39 +50,43 @@ const useCases = [
 
 const UseCases = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <div className="inline-block mb-6 px-6 py-2 bg-primary/10 rounded-full">
-              <span className="text-primary font-semibold">Industry Applications</span>
+    <section className="py-32 bg-background relative">
+      <div className="absolute inset-0 bg-gradient-accent opacity-20" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Header */}
+          <div className="space-y-4">
+            <div className="inline-block px-4 py-1.5 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20">
+              <span className="text-primary font-semibold text-sm">USE CASES</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Unlock Industry Value with{" "}
-              <span className="text-primary">Priority Use Cases</span>
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground max-w-4xl">
+              Proven Applications Across{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-primary">Critical Industries</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl">
-              Explore targeted, high-impact copilot and assistant solutions across key sectors
+              Purpose-built AI copilots and assistants delivering measurable impact in highly regulated sectors
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Use case cards */}
+          <div className="grid md:grid-cols-2 gap-6">
             {useCases.map((useCase, index) => (
-              <Card key={index} className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl group">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="p-4 bg-gradient-primary rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      <useCase.icon className="w-8 h-8 text-primary-foreground" />
+              <Card key={index} className="bg-gradient-card backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow group">
+                <CardContent className="p-8 space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="p-4 bg-primary/20 rounded-xl border border-primary/30 group-hover:shadow-glow transition-all duration-500">
+                      <useCase.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground pt-2">
+                    <h3 className="text-2xl font-bold text-foreground">
                       {useCase.industry}
                     </h3>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {useCase.applications.map((app, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <div className="min-w-[6px] w-[6px] h-[6px] rounded-full bg-accent mt-2" />
-                        <span className="text-muted-foreground leading-relaxed">
+                      <li key={idx} className="flex items-start gap-3 group/item">
+                        <div className="min-w-1.5 w-1.5 h-1.5 rounded-full bg-primary mt-2 group-hover/item:shadow-glow transition-all" />
+                        <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">
                           {app}
                         </span>
                       </li>

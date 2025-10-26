@@ -47,29 +47,36 @@ const deploymentOptions = [
 
 const SolutionOverview = () => {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-32 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Regence AI Overview
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Header */}
+          <div className="text-center space-y-4">
+            <div className="inline-block px-4 py-1.5 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20 mb-2">
+              <span className="text-primary font-semibold text-sm">THE SOLUTION</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground">
+              Enterprise-Grade
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-primary">Sovereign AI Platform</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive sovereign AI platform ensuring data residency, compliance, and industry focus
+              Complete infrastructure for secure, compliant, and high-performance AI deployment
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {/* Feature grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="mb-4 p-3 bg-gradient-primary w-fit rounded-lg">
-                    <feature.icon className="w-6 h-6 text-primary-foreground" />
+              <Card key={index} className="bg-gradient-card backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-1 group">
+                <CardContent className="p-8 space-y-4">
+                  <div className="p-3 bg-primary/20 rounded-xl border border-primary/30 w-fit group-hover:shadow-glow transition-all duration-500">
+                    <feature.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-bold text-lg text-foreground mb-3">
+                  <h3 className="font-bold text-xl text-foreground">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -77,18 +84,22 @@ const SolutionOverview = () => {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* Deployment options */}
+          <div className="grid md:grid-cols-2 gap-6 pt-8">
             {deploymentOptions.map((option, index) => (
-              <Card key={index} className="border-accent/30 bg-accent/5">
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-xl text-foreground mb-3">
-                    {option.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {option.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <div key={index} className="relative group">
+                <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-2xl blur-xl group-hover:opacity-10 transition-opacity" />
+                <Card className="relative bg-secondary/50 backdrop-blur-md border-primary/20 hover:border-primary/40 transition-all duration-500">
+                  <CardContent className="p-8 space-y-3">
+                    <h3 className="font-bold text-2xl text-foreground">
+                      {option.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {option.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>

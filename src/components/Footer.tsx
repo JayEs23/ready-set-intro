@@ -2,50 +2,55 @@ import { Shield } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-background border-t border-border py-16">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <Shield className="w-6 h-6 text-accent" />
-                <span className="font-bold text-xl">REGENCE AI</span>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            {/* Brand */}
+            <div className="md:col-span-2 space-y-4">
+              <div className="flex items-center gap-2">
+                <div className="p-2 bg-primary/20 rounded-lg border border-primary/30">
+                  <Shield className="w-5 h-5 text-primary" />
+                </div>
+                <span className="font-bold text-xl text-foreground">REGENCE AI</span>
               </div>
-              <p className="text-primary-foreground/80 mb-4">
-                A Sovereign AI Solutions for African Enterprises
-              </p>
-              <p className="text-sm text-primary-foreground/60">
-                Regulatory-Grade, In-Country Retrieval-Augmented Generation (RAG) for African Enterprises and Government
+              <p className="text-muted-foreground leading-relaxed max-w-md">
+                Sovereign AI infrastructure for African enterprises. Regulatory-grade, in-country RAG platform delivering secure, auditable AI solutions.
               </p>
             </div>
             
+            {/* Solutions */}
             <div>
-              <h4 className="font-semibold mb-4">Solutions</h4>
-              <ul className="space-y-2 text-sm text-primary-foreground/80">
-                <li>Financial Services</li>
-                <li>Healthcare</li>
-                <li>Energy & Mining</li>
-                <li>Public Sector</li>
-                <li>Manufacturing</li>
+              <h4 className="font-semibold text-foreground mb-4">Solutions</h4>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="hover:text-primary transition-colors cursor-pointer">Financial Services</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Healthcare</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Energy & Mining</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Public Sector</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Manufacturing</li>
               </ul>
             </div>
 
+            {/* Company */}
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-primary-foreground/80">
-                <li>About Us</li>
-                <li>Contact</li>
-                <li>Careers</li>
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
+              <h4 className="font-semibold text-foreground mb-4">Company</h4>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="hover:text-primary transition-colors cursor-pointer">About Us</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Contact</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Careers</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Privacy Policy</li>
+                <li className="hover:text-primary transition-colors cursor-pointer">Terms of Service</li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-primary-foreground/20 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
+          {/* Bottom bar */}
+          <div className="border-t border-border pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
               <p>© 2025 Regence AI. All rights reserved.</p>
-              <p>Powered by Golden Gate University</p>
+              <p className="flex items-center gap-2">
+                Built for Africa's AI future
+              </p>
             </div>
           </div>
         </div>

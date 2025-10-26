@@ -36,37 +36,46 @@ const architectureSteps = [
 
 const Architecture = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-32 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Technical Architecture Unveiled
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Header */}
+          <div className="text-center space-y-4">
+            <div className="inline-block px-4 py-1.5 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20 mb-2">
+              <span className="text-primary font-semibold text-sm">ARCHITECTURE</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground">
+              <span className="text-transparent bg-clip-text bg-gradient-primary">Enterprise-Grade</span>
+              <br />
+              Technical Foundation
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore the secure, precise, and flexible system design powering data access and AI-driven insights
+              Five-stage pipeline delivering secure, accurate, and auditable AI responses
             </p>
           </div>
 
-          {/* Architecture flow visualization */}
-          <div className="relative mb-16">
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-30 transform -translate-y-1/2 hidden lg:block" />
+          {/* Architecture flow */}
+          <div className="relative">
+            {/* Connection line */}
+            <div className="absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent hidden lg:block" />
             
-            <div className="grid lg:grid-cols-5 gap-8">
+            <div className="grid lg:grid-cols-5 gap-6">
               {architectureSteps.map((step, index) => (
                 <div key={index} className="relative">
-                  <Card className="border-2 border-border hover:border-primary transition-all duration-300 h-full">
-                    <CardContent className="p-6 text-center">
-                      <div className="relative inline-block mb-4">
-                        <div className="absolute inset-0 bg-gradient-primary rounded-full blur-xl opacity-50" />
-                        <div className="relative p-4 bg-gradient-primary rounded-full">
-                          <step.icon className="w-8 h-8 text-primary-foreground" />
+                  <Card className="bg-gradient-card backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow h-full group">
+                    <CardContent className="p-6 text-center space-y-4">
+                      {/* Icon with number badge */}
+                      <div className="relative inline-block">
+                        <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+                        <div className="relative p-4 bg-primary/20 border border-primary/30 rounded-2xl group-hover:shadow-glow transition-all">
+                          <step.icon className="w-7 h-7 text-primary" />
                         </div>
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center font-bold text-accent-foreground text-sm">
+                        <div className="absolute -top-2 -right-2 w-7 h-7 bg-primary rounded-full flex items-center justify-center font-bold text-primary-foreground text-sm shadow-glow">
                           {step.number}
                         </div>
                       </div>
-                      <h3 className="font-bold text-lg text-foreground mb-3">
+                      
+                      <h3 className="font-bold text-lg text-foreground">
                         {step.title}
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
@@ -79,13 +88,17 @@ const Architecture = () => {
             </div>
           </div>
 
-          <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              End-to-End Security & Compliance
-            </h3>
-            <p className="text-lg leading-relaxed opacity-90">
-              Every layer of our architecture is designed with security and compliance at its core. From encrypted data connections to air-gapped deployment options, Regence AI ensures your sensitive information never leaves your control while delivering powerful AI capabilities.
-            </p>
+          {/* Security section */}
+          <div className="relative overflow-hidden rounded-2xl border border-primary/30 shadow-glow">
+            <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+            <div className="relative p-10 md:p-12 space-y-4">
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+                End-to-End Security & Compliance
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
+                Every layer engineered for security and regulatory compliance. From encrypted data connections to air-gapped deployment options, your sensitive information never leaves your control while delivering powerful AI capabilities.
+              </p>
+            </div>
           </div>
         </div>
       </div>

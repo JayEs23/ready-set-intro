@@ -56,11 +56,16 @@ export default {
         'gradient-accent': 'var(--gradient-accent)',
         'gradient-mesh': 'var(--gradient-mesh)',
         'gradient-hero': 'var(--gradient-hero)',
+        'gradient-card': 'var(--gradient-card)',
       },
       boxShadow: {
         'glow': 'var(--shadow-glow)',
         'accent': 'var(--shadow-accent)',
         'card': 'var(--shadow-card)',
+        'subtle': 'var(--shadow-subtle)',
+      },
+      backdropBlur: {
+        'xs': '2px',
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
